@@ -22,4 +22,13 @@ public class RepositorioTipoServicos {
     public List<TipoServico> getListaTipoServico(){
         return tipoServicos;
     }
+
+    public TipoServico buscarTipoServico(String nomeTipoServico) {
+        for (TipoServico tipoServico : tipoServicos) {
+            if (tipoServico.getNomeServico().equals(nomeTipoServico)) {
+                return tipoServico;
+            }
+        }
+        return null;
+    }
 }

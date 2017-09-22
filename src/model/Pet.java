@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Objects;
+
 /**
  *
  * @author ibrum
@@ -29,5 +31,20 @@ public class Pet {
 
     public Cliente getDono() {
         return dono;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Pet outro = (Pet) obj;
+        if (!Objects.equals(this.nome, outro.nome)) {
+            return false;
+        }
+        return true;
     }
 }

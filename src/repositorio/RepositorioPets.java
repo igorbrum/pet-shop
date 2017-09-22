@@ -22,4 +22,13 @@ public class RepositorioPets {
     public List<Pet> getListaPets(){
         return pets;
     }
+
+    public Pet buscarPet(String nome) {
+        for (Pet pet : pets) {
+            if (pet.getNome().equals(nome)) {
+                return pet;
+            }
+        }
+        return null;
+    }
 }

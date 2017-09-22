@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Objects;
+
 /**
  *
  * @author ibrum
@@ -32,5 +34,19 @@ public class TipoServico {
         return preco;
     }
     
+    @Override
+    public boolean equals(Object obj){
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final TipoServico outro = (TipoServico) obj;
+        if (!Objects.equals(this.nomeServico, outro.nomeServico)) {
+            return false;
+        }
+        return true;
+    }
     
 }
